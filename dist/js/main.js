@@ -138,7 +138,7 @@ const setUnitPref = () => {
 };
 
 const refreshWeather = () => {
-  const refreshIcon = document.querySelector(".fa-sync");
+  const refreshIcon = document.querySelector(".fa-sync-alt");
   addSpinner(refreshIcon);
   updateDataAndDisplay(currentLoc);
 };
