@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     border: 2px solid $bordercolor;
-    border-radius: 500px;
+    border-radius: 5px;
 
     .searchBar__text {
       flex-grow: 1;
@@ -27,7 +27,7 @@
       border: none;
 
       i {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -37,10 +37,5 @@
       box-shadow: none;
       text-shadow: 4px 2px 5px $text-shadow-color;
     }
-  }
-
-  .searchBar__form:focus-within,
-  .searchBar__form:hover {
-    box-shadow: 4px 2px 5px $text-shadow-color;
   }
 }

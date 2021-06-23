@@ -81,7 +81,7 @@ export const updateDisplay = (weatherJson, locationObj) => {
 
   displayCurrentConditions(ccArray);
   displaySixDayForecast(weatherJson);
-  setFocusOnSearch();
+  // setFocusOnSearch();
   fadeDisplay();
 };
 

@@ -5,8 +5,8 @@
 }
 
 html {
-  background-color: rgba(0, 0, 255, 0.5);
-  background-image: url("../img/clouds.jpg");
+  background-color: #01e2ff;
+  background-image: none;
   background-size: cover;
   background-blend-mode: overlay;
   font-size: 16px;
@@ -28,21 +28,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0;
 }
 
 main {
   width: 100%;
   max-width: 700px;
-  max-height: 1050px;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2.5px #fff;
 }
 
 img {
@@ -142,7 +138,7 @@ hr {
   display: flex;
   justify-content: space-between;
   border: 2px solid lightgray;
-  border-radius: 500px;
+  border-radius: 5px;
 }
 .searchBar .searchBar__form .searchBar__text {
   flex-grow: 1;
@@ -162,17 +158,13 @@ hr {
   border: none;
 }
 .searchBar .searchBar__form .searchBar__button i {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 .searchBar .searchBar__form .searchBar__button:hover,
 .searchBar .searchBar__form .searchBar__button:focus {
   border: none;
   box-shadow: none;
   text-shadow: 4px 2px 5px #000;
-}
-.searchBar .searchBar__form:focus-within,
-.searchBar .searchBar__form:hover {
-  box-shadow: 4px 2px 5px #000;
 }
 
 .navButtons {
@@ -184,6 +176,9 @@ hr {
   padding: 0.5rem 0.25rem;
 }
 
+.currentForecast {
+  padding: 0 0.5rem;
+}
 .currentForecast .currentForecast__location {
   font-size: 1rem;
   font-weight: normal;
@@ -224,12 +219,12 @@ hr {
 }
 @media only screen and (min-width: 360px) {
   .currentForecast .currentForecast__conditions .temp {
-    font-size: 8rem;
+    font-size: 7rem;
   }
 }
 @media only screen and (min-width: 768px) {
   .currentForecast .currentForecast__conditions .temp {
-    font-size: 9rem;
+    font-size: 8rem;
   }
 }
 .currentForecast .currentForecast__conditions .temp .unit {
@@ -261,14 +256,14 @@ hr {
     font-size: 4rem;
   }
 }
-.currentForecast .currentForecast__conditions .maxtemp {
+.currentForecast .currentForecast__conditions .desc {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-row: 2/span 1;
   grid-column: 3/span 2;
 }
-.currentForecast .currentForecast__conditions .mintemp {
+.currentForecast .currentForecast__conditions .feels {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,7 +272,7 @@ hr {
   grid-column: 3/span 2;
   color: rgba(255, 255, 255, 0.6);
 }
-.currentForecast .currentForecast__conditions .desc {
+.currentForecast .currentForecast__conditions .maxtemp {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,16 +281,16 @@ hr {
   padding-top: 0.5rem;
 }
 @media only screen and (max-width: 1024px) and (min-height: 650px) {
-  .currentForecast .currentForecast__conditions .desc {
+  .currentForecast .currentForecast__conditions .maxtemp {
     margin-top: 1.5rem;
   }
 }
 @media only screen and (min-height: 1080px) {
-  .currentForecast .currentForecast__conditions .desc {
+  .currentForecast .currentForecast__conditions .maxtemp {
     margin-top: 1.5rem;
   }
 }
-.currentForecast .currentForecast__conditions .feels {
+.currentForecast .currentForecast__conditions .mintemp {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -382,26 +377,21 @@ hr {
 }
 
 .rain {
-  background-color: rgba(0, 0, 255, 0.5);
-  background-image: url("../img/rain.jpg");
+  background-color: #01e2ff;
 }
 
 .snow {
-  background-color: rgba(0, 0, 255, 0.5);
-  background-image: url("../img/snow.jpg");
+  background-color: #01e2ff;
 }
 
 .night {
-  background-color: rgba(204, 0, 102, 0.5);
-  background-image: url("../img/night.jpg");
+  background-color: #1c2534;
 }
 
 .fog {
   background-color: darkslategray;
-  background-image: url("../img/fog.jpg");
 }
 
 .clouds {
-  background-color: rgba(0, 0, 255, 0.5);
-  background-image: url("../img/clouds.jpg");
+  background-color: #01e2ff;
 }/*# sourceMappingURL=main.css.map */

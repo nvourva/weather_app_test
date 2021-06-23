@@ -6,7 +6,7 @@
 
   html {
 	background-color: $background-color;
-	background-image: url("../img/clouds.jpg");
+	background-image: none;
 	background-size: cover;
 	background-blend-mode: overlay;
 	font-size: 16px;
@@ -24,21 +24,17 @@
 	min-height: 100vh;
 	@include flexCenter;
 	flex-direction: column;
-	padding: 0.5rem;
+	padding: 0;
   }
 
   main {
 	width: 100%;
 	max-width: 700px;
-	max-height: 1050px;
+	max-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 	color: $font-color;
-	background-color: $mask-color;
-	border: 1px solid $bordercolor;
-	border-radius: 10px;
-	box-shadow: 1px 1px 2.5px $shadowcolor;
   }
 
   img {
