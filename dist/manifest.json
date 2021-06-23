@@ -1,0 +1,18 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "A Weather App",
+    "short_name": "Weather",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://agitated-payne-51d710.netlify.app/",
+    "background_color": "#000000",
+    "theme_color": "transparent",
+    "description": "",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [],
+    "url": "https://agitated-payne-51d710.netlify.app/",
+    "screenshots": []
+}
