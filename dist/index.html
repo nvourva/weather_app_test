@@ -18,7 +18,7 @@
         <section id="searchBar" class="searchBar fade-in">
             <form id="searchBar__form" class="searchBar__form" role="search">
                 <label for="searchBar__text" class="offscreen">Enter a new location</label>
-                <input id="searchBar__text" class="searchBar__text" type="text" role="searchbox" size="40" autocomplete="off" placeholder="City, State, Country">
+                <input id="searchBar__text" class="searchBar__text" type="text" role="searchbox" size="40" autocomplete="off" placeholder="City, State, Country"><span id="form_clear" class="form-clear"><i class="fa fa-times"></i></span>
                 <button id="searchBar__button" class="searchBar__button button" title="Submit Location" aria-label="Submit Search">
                     <i class="fa fa-search"></i>
                     <i class="fas fa-sync fa-spin none"></i>
@@ -54,6 +54,11 @@
             </button>
         </nav>
         <hr class="fade-in">
+		<section id="hourlyForecast" class="hourlyForecast fade-in" role="region" aria-labelledby="hourlyForecast__title">
+			<h2 id="hourlyForecast__title" class="hourlyForecast__title offscreen">Six Hour Forecast</h2>
+			<div id="hourlyForecast__contents" class="hourlyForecast__contents"></div>
+		</section>
+		<hr class="fade-in">
         <section id="dailyForecast" class="dailyForecast fade-in" role="region" aria-labelledby="dailyForecast__title">
             <h2 id="dailyForecast__title" class="dailyForecast__title offscreen">Six Day Forecast</h2>
             <div id="dailyForecast__contents" class="dailyForecast__contents"></div>

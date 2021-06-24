@@ -80,6 +80,7 @@ export const updateDisplay = (weatherJson, locationObj) => {
   );
 
   displayCurrentConditions(ccArray);
+  displaySixHourForecast(weatherJson);
   displaySixDayForecast(weatherJson);
   // setFocusOnSearch();
   fadeDisplay();
@@ -89,6 +90,10 @@ const fadeDisplay = () => {
   const cc = document.getElementById("currentForecast");
   cc.classList.toggle("zero-vis");
   cc.classList.toggle("fade-in");
+
+  const sixHour = document.getElementById("hourlyForecast");
+  sixHour.classList.toggle("zero-vis");
+  sixHour.classList.toggle("fade-in");
 
   const sixDay = document.getElementById("dailyForecast");
   sixDay.classList.toggle("zero-vis");
@@ -100,6 +105,8 @@ const clearDisplay = () => {
     "currentForecast__conditions"
   );
   deleteContents(currentConditions);
+  const sixHourForecast = document.getElementById("hourlyForecast__contents");
+  deleteContents(sixHourForecast);
   const sixDayForecast = document.getElementById("dailyForecast__contents");
   deleteContents(sixDayForecast);
 };
@@ -286,11 +293,38 @@ const displayCurrentConditions = (currentConditionsArray) => {
   });
 };
 
+const displaySixHourForecast = (weatherJson) => {
+  for (let i = 1; i <= 6; i++) {
+    const dfArray = createHourlyForecastDivs(weatherJson.hourly[i]);
+    displayHourlyForecast(dfArray);
+  }
+};
+
 const displaySixDayForecast = (weatherJson) => {
   for (let i = 1; i <= 6; i++) {
     const dfArray = createDailyForecastDivs(weatherJson.daily[i]);
     displayDailyForecast(dfArray);
   }
+};
+
+const createHourlyForecastDivs = (hourWeather) => {
+  const hourAbbreviationText = getHourAbbreviation(hourWeather.dt);
+  const hourAbbreviation = createElem(
+    "p",
+    "hourAbbreviation",
+    hourAbbreviationText
+  );
+  const hourIcon = createDailyForecastIcon(
+    hourWeather.weather[0].icon,
+    hourWeather.weather[0].description
+  );
+  const temp = createElem(
+    "p",
+    "hourTemp",
+    `${Math.round(Number(hourWeather.temp))}°`
+  );
+
+  return [hourAbbreviation, hourIcon, temp];
 };
 
 const createDailyForecastDivs = (dayWeather) => {
@@ -318,6 +352,12 @@ const createDailyForecastDivs = (dayWeather) => {
   return [dayAbbreviation, dayIcon, dayHigh, dayLow];
 };
 
+const getHourAbbreviation = (data) => {
+  const dateObj = new Date(data * 1000);
+  const dateString = dateObj.toString();
+  return dateString.slice(16, 21).toUpperCase();
+};
+
 const getDayAbbreviation = (data) => {
   const dateObj = new Date(data * 1000);
   const utcString = dateObj.toUTCString();
@@ -334,6 +374,17 @@ const createDailyForecastIcon = (icon, altText) => {
 
   img.alt = altText;
   return img;
+};
+
+const displayHourlyForecast = (dfArray) => {
+  const hourDiv = createElem("div", "forecastHour");
+  dfArray.forEach((el) => {
+    hourDiv.appendChild(el);
+  });
+  const hourlyForecastContainer = document.getElementById(
+    "hourlyForecast__contents"
+  );
+  hourlyForecastContainer.appendChild(hourDiv);
 };
 
 const displayDailyForecast = (dfArray) => {

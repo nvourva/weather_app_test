@@ -19,6 +19,13 @@
       outline: none;
     }
 
+    .form-clear {
+      display: inline-block;
+      line-height: 48px;
+      font-size: 1.4rem;
+      visibility: hidden;
+    }
+
     .searchBar__text::placeholder {
       color: $fadecolor;
     }

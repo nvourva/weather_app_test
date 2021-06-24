@@ -34,8 +34,14 @@ const initApp = () => {
   const refreshButton = document.getElementById("refresh");
   refreshButton.addEventListener("click", refreshWeather);
 
-  const locationEntry = document.getElementById("searchBar__form");
-  locationEntry.addEventListener("submit", submitNewLocation);
+  const locationEntry = document.getElementById("searchBar__text");
+  locationEntry.addEventListener("keyup", showFormClear);
+
+  const clearLocation = document.getElementById("form_clear");
+  clearLocation.addEventListener("click", clearForm);
+
+  const locationSubmit = document.getElementById("searchBar__form");
+  locationSubmit.addEventListener("submit", submitNewLocation);
   // setup
   setPlaceholderText();
   // load default weather
@@ -48,6 +54,7 @@ const getGeoWeather = (event) => {
   if (event) {
     if (event.type === "click") {
       const mapIcon = document.querySelector(".fa-map-marker-alt");
+	  clearForm();
       addSpinner(mapIcon);
     }
 
@@ -92,6 +99,7 @@ const loadWeather = (event) => {
     displayHomeLocationWeather(savedLocation);
   } else {
     const homeIcon = document.querySelector(".fa-home");
+	clearForm();
     addSpinner(homeIcon);
     displayHomeLocationWeather(savedLocation);
   }
@@ -178,4 +186,15 @@ const updateDataAndDisplay = async (locationObj) => {
   const weatherJson = await getWeatherFromCoords(locationObj);
   if (weatherJson) updateDisplay(weatherJson, locationObj);
 };
-//https://youtu.be/s_Ie_yh_4Co?t=8612
+
+const clearForm = () => {
+	document.getElementById('searchBar__text').value = "";
+	const clearButton = document.querySelector('.form-clear');
+	clearButton.style.visibility = "hidden";
+}
+
+const showFormClear = (event) => {
+	const formText = document.getElementById('searchBar__text');
+	const clearButton = document.querySelector('.form-clear');
+	clearButton.style.visibility = (formText.value.length) ? "visible" : "hidden";
+}
